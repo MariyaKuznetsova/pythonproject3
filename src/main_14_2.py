@@ -13,18 +13,22 @@ class Product:
 
     @classmethod
     def new_product(cls, dict_product):
-        name = dict_product["name"]
-        description = dict_product["description"]
-        price = dict_product["price"]
-        quantity = dict_product["quantity"]
-        return Product(name, description, price, quantity)
+        try:
+            name = dict_product["name"]
+            description = dict_product["description"]
+            price = dict_product["price"]
+            quantity = dict_product["quantity"]
+            return Product(name, description, price, quantity)
+        except KeyError as e:
+            raise ValueError(f"Не хватает ключа в словаре: {e}")
+
 
     @property
-    def get_price(self):  # геттер
+    def price(self):  # геттер
         return self.__price
 
-    @get_price.setter
-    def set_price(self, price):
+    @price.setter
+    def price(self, price):
         if price <= 0:
             print("Цена не должна быть нулевая или отрицательная")
         else:
@@ -50,14 +54,13 @@ class Category:
 
     def add_product(self, product):
         self.__products.append(product)
-        Category.category_count += 1
         Category.product_count += product.quantity
 
     @property
-    def products_str(self):
+    def products(self):
         product_new_list = []
         for product in self.__products:
-            product_new = f"{product.name}, {product.get_price} руб. Остаток: {product.quantity} шт."
+            product_new = f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
             product_new_list.append(product_new)
         return product_new_list
 
@@ -73,10 +76,10 @@ if __name__ == "__main__":
         [product1, product2, product3],
     )
 
-    print(category1.products_str)
+    print(category1.products)
     product4 = Product('55" QLED 4K', "Фоновая подсветка", 123000.0, 7)
     category1.add_product(product4)
-    print(category1.products_str)
+    print(category1.products)
     print(category1.product_count)
 
     new_product = Product.new_product(
@@ -89,13 +92,13 @@ if __name__ == "__main__":
     )
     print(new_product.name)
     print(new_product.description)
-    print(new_product.get_price)
+    print(new_product.price)
     print(new_product.quantity)
 
-    new_product.set_price = 800
-    print(new_product.set_price)
+    new_product.price = 800
+    print(new_product.price)
 
-    new_product.set_price = -100
-    print(new_product.set_price)
-    new_product.set_price = 0
-    print(new_product.set_price)
+    new_product.price = -100
+    print(new_product.price)
+    new_product.price = 0
+    print(new_product.price)

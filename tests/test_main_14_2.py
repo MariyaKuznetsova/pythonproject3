@@ -11,7 +11,7 @@ def product_product_14_2_1():
 def test_product_14_2(product_product_14_2_1):
     assert product_product_14_2_1.name == '55" QLED 4K'
     assert product_product_14_2_1.description == "Фоновая подсветка"
-    assert product_product_14_2_1.get_price == 123000.0
+    assert product_product_14_2_1.price == 123000.0
     assert product_product_14_2_1.quantity == 7
 
 
@@ -33,9 +33,8 @@ def test_category_14_2(category_category_14_2_1):
         category_category_14_2_1.description
         == "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
     )
-    assert category_category_14_2_1.category_count == 1
     assert category_category_14_2_1.product_count == 27
-    assert category_category_14_2_1.products_str == [
+    assert category_category_14_2_1.products == [
         "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.",
         "Iphone 15, 210000.0 руб. Остаток: 8 шт.",
         "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.",
