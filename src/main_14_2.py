@@ -22,7 +22,6 @@ class Product:
         except KeyError as e:
             raise ValueError(f"Не хватает ключа в словаре: {e}")
 
-
     @property
     def price(self):  # геттер
         return self.__price
