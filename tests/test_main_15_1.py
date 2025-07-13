@@ -9,7 +9,7 @@ def product_product_15_1():
 
 
 def test_product_15_1(product_product_15_1):
-    assert str(product_product_15_1) == 'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.'
+    assert str(product_product_15_1) == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
 
 
 def test_product_15_1_1():
@@ -18,8 +18,7 @@ def test_product_15_1_1():
     product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
     assert product1 + product2 == 2580000.0
     assert product2 + product3 == 2114000.0
-    assert str(product2) == 'Iphone 15, 210000.0 руб. Остаток: 8 шт.'
-
+    assert str(product2) == "Iphone 15, 210000.0 руб. Остаток: 8 шт."
 
 
 @pytest.fixture
@@ -35,7 +34,9 @@ def category_category_15_1():
 
 
 def test_category_15_1(category_category_15_1):
-    assert str(category_category_15_1) == 'Смартфоны, количество продуктов: 27 шт.'
-    assert category_category_15_1.products_str == ['Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.',
- 'Iphone 15, 210000.0 руб. Остаток: 8 шт.',
- 'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.']
+    assert str(category_category_15_1) == "Смартфоны, количество продуктов: 27 шт."
+    assert category_category_15_1.products_str == [
+        "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.",
+        "Iphone 15, 210000.0 руб. Остаток: 8 шт.",
+        "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.",
+    ]
