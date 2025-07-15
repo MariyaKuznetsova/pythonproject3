@@ -20,6 +20,8 @@ pip install -r requirements.txt
 2. Category - Класс категории продуктов.
 3. Smartphone - Класс категории смартфоны.
 4. LawnGrass - Класс категории газонная трава.
+5. BaseProduct - Абстрактный класс.
+6. MixinLog - Класс миксины.
 
 ## Примеры работы классов:
 
