@@ -40,3 +40,25 @@ def test_product_17_1_1():
     assert category1.product_count == 40
     assert category2.middle_price() == 195000.0
     assert category_empty.middle_price() == 0
+    assert category1.name == 'Смартфоны'
+    assert category1.description == ('Смартфоны, как средство не только коммуникации, но и получения '
+ 'дополнительных функций для удобства жизни')
+    assert len(category1.products) == 3
+    assert product1.name == "Samsung Galaxy S23 Ultra"
+    assert product1.description == "256GB, Серый цвет, 200MP камера"
+    assert product1.price == 180000.0
+    assert product1.quantity == 5
+    assert product2.name == 'Iphone 15'
+    assert product2.description == "512GB, Gray space"
+    assert product2.price == 210000.0
+    assert product2.quantity == 8
+    assert product3.name == "Xiaomi Redmi Note 11"
+    assert product3.description == "1024GB, Синий"
+    assert product3.price == 31000.0
+    assert product3.quantity == 14
+    assert category1.name == 'Смартфоны'
+    assert category1.description == ('Смартфоны, как средство не только коммуникации, но и получения '
+ 'дополнительных функций для удобства жизни')
+    assert len(category2.products) == 2
+    assert len(category_empty.products) == 0
+

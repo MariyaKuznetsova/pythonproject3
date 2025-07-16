@@ -35,3 +35,4 @@ def test_category(category_category_1):
     )
     assert category_category_1.category_count == 1
     assert category_category_1.product_count == 27
+    assert len(category_category_1.products) == 3
